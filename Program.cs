@@ -1,5 +1,6 @@
 ﻿using ScreenSoud.Modelos;
 using ScreenSound;
+using ScreenSound.Menus;
 
 Banda ira = new("Ira");
 ira.AdicionarNota(new Avaliacao(10));
@@ -53,7 +54,8 @@ void ExibirOpcoesDoMenu()
             AvaliarUmaBanda();
             break;
         case 5:
-            ExibirDetalhes();
+            MenuExibirDetalhes menu = new MenuExibirDetalhes();
+            menu.Executar(bandasregistradas);
             break;
         case -1:
             Console.WriteLine("Tchau tchau :)");
@@ -125,7 +127,7 @@ void MostrarBandasRegistradas()
 
 }
 
-void ExibirTituloDaOpcao(string titulo)
+  void ExibirTituloDaOpcao(string titulo)
 {
     int quantidadeDeLetras = titulo.Length;
     string asteriscos = string.Empty.PadLeft(quantidadeDeLetras, '*');
@@ -136,8 +138,9 @@ void ExibirTituloDaOpcao(string titulo)
 
 void AvaliarUmaBanda()
 {
+    
     Console.Clear();
-    ExibirTituloDaOpcao("Avaliar banda");
+    /*ExibirTituloDaOpcao("Avaliar banda");*/
     Console.Write("Digite o nome da banda que deseja avaliar: ");
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasregistradas.ContainsKey(nomeDaBanda))
@@ -162,33 +165,6 @@ void AvaliarUmaBanda()
 
 }
 
-void ExibirDetalhes()
-{
-    Console.Clear();
-    ExibirTituloDaOpcao("Exibir detalhes da banda");
-    Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
-    string nomeDaBanda = Console.ReadLine()!;
-    if (bandasregistradas.ContainsKey(nomeDaBanda))
-    {
-        Banda banda = bandasregistradas[nomeDaBanda];
-        Console.WriteLine($"\nA média da banda {nomeDaBanda} é {banda.Media}.");
-        /**
-        * COMPLETAR A FUNÇÃO DPS
-        */
-        Console.WriteLine("Digite uma tecla para votar ao menu principal");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
 
-    }
-    else
-    {
-        Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
-        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
-    }
-}
 
 ExibirOpcoesDoMenu();
