@@ -1,0 +1,64 @@
+# Build results
+bin/
+obj/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET
+wwwroot/node_modules/
+wwwroot/lib/
+
+# Visual Studio
+.vs/
+*.dbmdl
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# DotCover
+*.dotCover
+
+# Coverage results
+coverage/
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Sonar
+.sonar/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider
+.idea/
+
+# Dotnet watch
+**/Properties/launchSettings.json
